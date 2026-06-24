@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strategies>
+  <strategy name="OneNote" analyzer="MovementAnalyzer" arranger="OneNoteArranger"
+            parameters="CURRENT_FIELD,REF1_FIELD" />
+  <strategy name="UpTick/DownTick" analyzer="MovementAnalyzer" arranger="TwoNoteArranger"
+            parameters="CURRENT_FIELD,REF1_FIELD" />
+  <strategy name="MovementAnalyzer" analyzer="MovementAnalyzer" arranger="ThreeNoteArranger"
+           parameters="CURRENT_FIELD,REF1_FIELD" />
+  <strategy name="MovementAnalyzerWithTarget" analyzer="TargetAnalyzer" arranger="FourNoteArranger"
+             parameters="CURRENT_FIELD,REF1_FIELD,TARGET_FIELD" />
+  <strategy name="BidAsk" analyzer="TrillAnalyzer" arranger="TrillArranger"
+             parameters="TOP_SIZE_FIELD,BOTTOM_FIELD,BOTTOM_SIZE_FIELD" />
+  <strategy name="SizePrice" analyzer="SizeAnalyzer" arranger="SizeArranger"
+             parameters="CURRENT_FIELD,REF1_FIELD,SIZE_FIELD" />
+  <strategy name="BoundedSlider" analyzer="SliderAnalyzer" arranger="BoundedSliderArranger"
+             parameters="CURRENT_FIELD,REF1_FIELD,REF2_FIELD" />
+  <strategy name="UnboundedSlider" analyzer="SliderAnalyzer" arranger="UnboundedSliderArranger"
+             parameters="CURRENT_FIELD,REF1_FIELD,REF2_FIELD" />
+  <strategy name="Beet5" analyzer="MovementAnalyzer" arranger="Beet5Arranger"
+             parameters="CURRENT_FIELD,REF1_FIELD" />
+</strategies>

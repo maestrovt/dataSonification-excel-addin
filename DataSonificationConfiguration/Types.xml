@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<types>
+  <!-- Arranger Types : Specify default parameters here except for base_pitch which is defined per instrument -->
+  <arrangers>
+    <arranger tableName="TwoNoteArranger" tempo="60" duration="0.5" hold="0.25" loudness="0.9" />
+    <arranger tableName="ThreeNoteArranger" tempo="60" duration="0.5" hold="0.25" loudness="0.9" />
+    <arranger tableName="FourNoteArranger" tempo="60" duration="0.5" hold="0.25" loudness="0.9" target_distance="1"/>
+    <arranger tableName="TrillArranger" tempo="60" duration="0.5" hold="0.25" loudness="0.9" />
+    <arranger tableName="UnboundedSliderArranger" tempo="60" loudness="0.9" close_interval="1"  />
+    <arranger tableName="BoundedSliderArranger" tempo="60" loudness="0.9" />
+  </arrangers>
+  <trainers>
+    <trainer tableName="DefaultTrainer" defaultType="true" />
+  </trainers>
+  <instruments>
+    <instrument tableName="SampleInstrument" all_instruments_table="allsampleinstruments" remapper="LongRemapper" />
+    <instrument tableName ="JavaMidiInstrument" all_instruments_table="allmidiinstruments" channel="1" />
+  </instruments>
+  <!-- Analyzer Types : Specify default parameters here -->
+  <analyzers>
+    <analyzer tableName="MovementAnalyzer" significant_move="1"/>
+    <analyzer tableName="SizeAnalyzer"   significant_move="1" threshold="5000" threshold_change="1000"  />
+    <analyzer tableName="TargetAnalyzer" significant_move="1" />
+    <analyzer tableName="TrillAnalyzer"  significant_move="1" threshold="5000" threshold_change="1000" />
+    <analyzer tableName="SliderAnalyzer" significant_move="1" />
+  </analyzers>
+</types>
