@@ -43,19 +43,28 @@ Create a runtime folder and gather:
 - `SonifyStrategies.xml` (analyzer/arranger strategy table).
 - `DataSonificationMonitor.exe` (watchdog).
 - `dataSonification.db` and the `Samples/` folder — download
-  **`dataSonification-runtime-samples.zip`** from this repo's *Releases* and
-  extract it here.
+  **`dataSonification-runtime-samples.zip`** from the
+  [dataSonification-java *Releases*](https://github.com/maestrovt/dataSonification-java/releases)
+  and extract it here.
 - The dataSonification Java engine (`dataSonification.jar`). You can either
   place it in the runtime folder with a bundled JRE at `jre\bin\java.exe`, or
   run it yourself from the Java repo with `ant run` before opening Excel.
 
 ## 3. Configure paths
 
-The engine reads its configuration from the SQLite database. Make sure these
-settings point at your runtime folder:
+You do **not** edit these paths by hand. When the add-in connects to the
+engine, it derives the runtime locations from the folder the XLL is loaded
+from and sends them to the engine, which override the engine's own defaults:
 
-- `DB_NAME` / `INST_DB_NAME` → your `dataSonification.db`
-- `SAMPLE_DIR` → the extracted `Samples/` folder
+- `DB_NAME` / `INST_DB_NAME` → `dataSonification.db` in the XLL's folder
+- `SAMPLE_DIR` → the `Samples` folder in the XLL's folder
+
+So the only requirement is **layout**: keep `dataSonification.db` and the
+extracted `Samples/` folder in the **same runtime folder as the XLL** (step 2).
+Get the layout right and the add-in points the engine at them automatically.
+
+(If you run the engine standalone, without Excel, these come from the engine's
+own `settings/core.txt` instead — edit `SAMPLE_DIR` / `DB_NAME` there.)
 
 The General MIDI soundbank (`soundbank-deluxe.gm`) is **not** shipped; it is
 only needed for the MIDI-instrument playback path. See LICENSING.md.

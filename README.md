@@ -26,9 +26,9 @@ Excel  ──=Sonify()──►  this add-in (XLL)  ──TCP :2011──►  da
   — the audio engine. Run it first (it listens on port 2011), then open your
   workbook.
 - **Audio samples** — the runtime sample set is distributed as a GitHub Release
-  asset on this repository: **`dataSonification-runtime-samples.zip`** (under
-  *Releases*). It contains the `Samples/` folders and a runtime copy of
-  `dataSonification.db`.
+  asset on the **[dataSonification-java](https://github.com/maestrovt/dataSonification-java/releases)**
+  repository: **`dataSonification-runtime-samples.zip`** (under *Releases*). It
+  contains the `Samples/` folders and a runtime copy of `dataSonification.db`.
 
 ## Sonification schemes
 
@@ -48,8 +48,11 @@ Java engine's README for details.
 
 1. Build this solution in Visual Studio (Release | Any CPU). See
    [SETUP.md](SETUP.md) for full details.
-2. Download `dataSonification-runtime-samples.zip` from Releases and extract it
-   into your runtime folder; point `SAMPLE_DIR` at the `Samples/` folder.
+2. Download `dataSonification-runtime-samples.zip` from the
+   [dataSonification-java Releases](https://github.com/maestrovt/dataSonification-java/releases)
+   and extract it into your runtime folder so that `Samples/` and
+   `dataSonification.db` sit beside the XLL. The add-in locates them
+   automatically — no path to edit.
 3. Start the Java engine (`ant run` in the dataSonification-java repo).
 4. Register the XLL matching your Excel bitness, open a workbook, and enter a
    `=Sonify(...)` formula on a cell whose value updates.
