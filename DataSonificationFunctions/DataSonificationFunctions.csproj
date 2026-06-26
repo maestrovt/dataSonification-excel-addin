@@ -51,9 +51,6 @@
     <Content Include="DataSonificationAddin.dna">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataSonificationAddin.xll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataSonificationConfiguration\DataSonificationConfiguration.csproj">
