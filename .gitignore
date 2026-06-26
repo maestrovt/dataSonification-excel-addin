@@ -25,5 +25,6 @@ packages/
 # Windows artifacts
 nul
 
-# Claude Code
+# Claude Code — local dev notes, never published
 .claude/
+CLAUDE.md
